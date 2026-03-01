@@ -1,83 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Support Page</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 90%;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* 처음에 둘 다 숨겨둡니다 */
-        #content-ko, #content-en {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ratings - Support</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .cta {
+      display: inline-block;
+      margin: 8px 0 18px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+    }
+    .cta:hover {
+      text-decoration: none;
+      background: #000;
+    }
+
+    #content-ko, #content-en {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- 한국어 콘텐츠 -->
+    <div id="content-ko">
+      <h1>Ratings 공식 지원 사이트</h1>
+      <p>Ratings 앱을 이용해 주셔서 감사합니다.</p>
 
-    <div class="container">
-        <!-- 한국어 콘텐츠 -->
-        <div id="content-ko">
-            <h1>Ratings 공식 지원 사이트</h1>
-            <p>Ratings 앱을 이용해 주셔서 감사합니다.</p>
-            <p>문의사항이나 건의사항이 있으시면 아래 이메일로 연락해 주세요.</p>
-            <p>✉️ <a href="mailto:dev.odddeye@gmail.com">dev.odddeye@gmail.com</a></p>
-        </div>
+      <a class="cta"
+         href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=ko"
+         target="_blank"
+         rel="noopener noreferrer">
+        Google Play에서 설치
+      </a>
 
-        <!-- 영어 콘텐츠 -->
-        <div id="content-en">
-            <h1>Ratings Support Site</h1>
-            <p>Thank you for using Ratings.</p>
-            <p>If you have any questions or suggestions, please contact us via email.</p>
-            <p>✉️ <a href="mailto:dev.odddeye@gmail.com">dev.odddeye@gmail.com</a></p>
-        </div>
+      <p>문의사항이나 건의사항이 있으시면 아래 이메일로 연락해 주세요.</p>
+      <p>✉️ <a href="mailto:dev.odddeye@gmail.com">dev.odddeye@gmail.com</a></p>
     </div>
 
-    <script>
-        // 브라우저 언어 확인
-        var userLang = navigator.language || navigator.userLanguage; 
-        
-        // 언어가 'ko'로 시작하면 한국어 표시, 아니면 영어 표시
-        if (userLang.startsWith('ko')) {
-            document.getElementById('content-ko').style.display = 'block';
-            document.documentElement.lang = 'ko'; // html 태그의 lang 속성 변경
-        } else {
-            document.getElementById('content-en').style.display = 'block';
-        }
-    </script>
+    <!-- 영어 콘텐츠 -->
+    <div id="content-en">
+      <h1>Ratings Support Site</h1>
+      <p>Thanks for using Ratings.</p>
 
+      <a class="cta"
+         href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=en"
+         target="_blank"
+         rel="noopener noreferrer">
+        Get it on Google Play
+      </a>
+
+      <p>If you have questions or suggestions, contact us via email.</p>
+      <p>✉️ <a href="mailto:dev.odddeye@gmail.com">dev.odddeye@gmail.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    const userLang = navigator.language || navigator.userLanguage || "en";
+    const isKo = userLang.toLowerCase().startsWith("ko");
+
+    if (isKo) {
+      document.getElementById("content-ko").style.display = "block";
+      document.documentElement.lang = "ko";
+      document.title = "Ratings - 지원";
+    } else {
+      document.getElementById("content-en").style.display = "block";
+      document.documentElement.lang = "en";
+      document.title = "Ratings - Support";
+    }
+  </script>
 </body>
 </html>
