@@ -18,6 +18,7 @@
       padding: 24px 0;
     }
     .container {
+      box-sizing: border-box;
       background: white;
       padding: 34px 26px;
       border-radius: 12px;
@@ -32,14 +33,25 @@
       margin: 0 0 16px;
       line-height: 1.5;
     }
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin: 8px 0;
+    }
     .store-badge {
-      display: inline-block;
-      margin: 8px 0 8px;
+      display: block;
     }
     .store-badge img {
       height: 56px;
       width: auto;
       display: block;
+    }
+    @media (max-width: 520px) {
+      .store-badges { gap: 20px; }
+      .store-badge img { height: 40px; }
     }
     .subtle {
       font-size: 14px;
@@ -84,13 +96,21 @@
         가짜 5점 리뷰는 그만. 소셜 없이, 나만 보는 솔직한 평가 기록 앱.
       </p>
 
-      <a class="store-badge"
-         href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=ko"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Google Play에서 Starly 다운로드">
+      <div class="store-badges">
         <!-- 배지는 EN으로 통일 -->
-        <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" />
-      </a>
+        <a class="store-badge"
+           href="https://apps.apple.com/app/id6823059444"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="App Store에서 Starly 다운로드">
+          <img src="assets/app-store-badge-en.svg" alt="Download on the App Store" />
+        </a>
+        <a class="store-badge"
+           href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=ko"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Google Play에서 Starly 다운로드">
+          <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" />
+        </a>
+      </div>
 
       <div class="subtle">iOS 버전은 준비 중입니다.</div>
 
@@ -120,12 +140,20 @@
         Stop giving polite 5-stars. Keep a brutally honest, private rating journal.
       </p>
 
-      <a class="store-badge"
-         href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=en"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Download Starly on Google Play">
-        <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" />
-      </a>
+      <div class="store-badges">
+        <a class="store-badge"
+           href="https://apps.apple.com/app/id6823059444"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Download Starly on the App Store">
+          <img src="assets/app-store-badge-en.svg" alt="Download on the App Store" />
+        </a>
+        <a class="store-badge"
+           href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=en"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Download Starly on Google Play">
+          <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" />
+        </a>
+      </div>
 
       <div class="subtle">iOS version is coming soon.</div>
 
