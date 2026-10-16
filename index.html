@@ -4,199 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Starly - Support</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f8f9fa;
-      color: #333;
-      text-align: center;
-      padding: 24px 0;
-    }
-    .container {
-      box-sizing: border-box;
-      background: white;
-      padding: 34px 26px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      max-width: 520px;
-      width: 92%;
-    }
-    h1 { font-size: 26px; margin: 0 0 8px; }
-    .tagline {
-      font-size: 16px;
-      color: #555;
-      margin: 0 0 16px;
-      line-height: 1.5;
-    }
-    .store-badges {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 28px;
-      margin: 8px 0;
-    }
-    .store-badge {
-      display: block;
-    }
-    .store-badge img {
-      height: 56px;
-      width: auto;
-      display: block;
-    }
-    @media (max-width: 520px) {
-      .store-badges { gap: 20px; }
-      .store-badge img { height: 40px; }
-    }
-    .subtle {
-      font-size: 14px;
-      color: #777;
-      margin: 6px 0 18px;
-    }
-    .section-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 18px 0 8px;
-      color: #333;
-      text-align: left;
-    }
-    ul {
-      margin: 0 0 10px;
-      padding-left: 18px;
-      text-align: left;
-      color: #666;
-      line-height: 1.55;
-      font-size: 15px;
-    }
-    li { margin: 6px 0; }
-    a { color: #0b66ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .divider {
-      height: 1px;
-      background: #eee;
-      margin: 18px 0;
-    }
-
-    #content-ko, #content-en { display: none; }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script>
+    const userLang = navigator.language || navigator.userLanguage || "en";
+    const language = userLang.toLowerCase().startsWith("ko") ? "ko" : "en";
+    const target = new URL(language + "/", window.location.href);
+    target.search = window.location.search;
+    target.hash = window.location.hash;
+    window.location.replace(target.href);
+  </script>
 </head>
 <body>
   <div class="container">
-
-    <!-- 한국어 -->
-    <div id="content-ko">
-      <h1>Starly</h1>
-      <p class="tagline">
-        가짜 5점 리뷰는 그만. 소셜 없이, 나만 보는 솔직한 평가 기록 앱.
-      </p>
-
-      <div class="store-badges">
-        <!-- 배지는 EN으로 통일 -->
-        <a class="store-badge"
-           href="https://apps.apple.com/app/id6823059444"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="App Store에서 Starly 다운로드">
-          <img src="assets/app-store-badge-en.svg" alt="Download on the App Store" />
-        </a>
-        <a class="store-badge"
-           href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=ko"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Google Play에서 Starly 다운로드">
-          <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" />
-        </a>
-      </div>
-
-      <div class="subtle">iOS 버전은 준비 중입니다.</div>
-
-      <div class="divider"></div>
-
-      <div class="section-title">주요 기능</div>
-      <ul>
-        <li>0.5점 단위(반별)로 빠르고 솔직한 평점 기록</li>
-        <li>사진 & 메모로 “미래의 나”를 위한 기록</li>
-        <li>음식/영화/음악/책/게임/여행/장소/운동/제품 등 카테고리별 관리</li>
-        <li>내 평균 평점, 카테고리별 통계, 분포로 내 취향 보기</li>
-        <li>검색/필터(예: 1점만 보기)로 과거 기록 즉시 찾기</li>
-      </ul>
-
-      <div class="divider"></div>
-
-      <p>
-        문의/건의: <a href="mailto:dev.odddeye@gmail.com">dev.odddeye@gmail.com</a>
-      </p>
-      <p>
-        <a href="https://pepper-script-7b0.notion.site/Privacy-Policy-2f4b8551909980bfa808c3426b08a44f"
-           target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
-      </p>
-    </div>
-
-    <!-- English -->
-    <div id="content-en">
-      <h1>Starly</h1>
-      <p class="tagline">
-        Stop giving polite 5-stars. Keep a brutally honest, private rating journal.
-      </p>
-
-      <div class="store-badges">
-        <a class="store-badge"
-           href="https://apps.apple.com/app/id6823059444"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Download Starly on the App Store">
-          <img src="assets/app-store-badge-en.svg" alt="Download on the App Store" />
-        </a>
-        <a class="store-badge"
-           href="https://play.google.com/store/apps/details?id=com.darkmeter.ratings&hl=en"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Download Starly on Google Play">
-          <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" />
-        </a>
-      </div>
-
-      <div class="subtle">iOS version is coming soon.</div>
-
-      <div class="divider"></div>
-
-      <div class="section-title">Key features</div>
-      <ul>
-        <li>Fast 0.5-step ratings (half-star precision)</li>
-        <li>Add photos and honest notes for your future self</li>
-        <li>Track across categories: Food, Movies/TV, Music, Books, Games, Travel, Places, Exercise, Products</li>
-        <li>Your stats: total logs, average score, category stats, rating distribution</li>
-        <li>Search and filters (e.g., show only 1-star places)</li>
-      </ul>
-
-      <div class="divider"></div>
-
-      <p>
-        Support: <a href="mailto:dev.odddeye@gmail.com">dev.odddeye@gmail.com</a>
-      </p>
-      <p>
-        <a href="https://pepper-script-7b0.notion.site/Privacy-Policy-2f4b8551909980bfa808c3426b08a44f"
-           target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-      </p>
-    </div>
-
+    <h1>Starly</h1>
+    <p class="tagline">Choose your language / <span lang="ko">언어를 선택하세요.</span></p>
+    <nav class="language-switcher" aria-label="Language / 언어 선택">
+      <a href="en/" lang="en" hreflang="en">English</a>
+      <a href="ko/" lang="ko" hreflang="ko">한국어</a>
+    </nav>
   </div>
-
-  <script>
-    const userLang = navigator.language || navigator.userLanguage || "en";
-    const isKo = userLang.toLowerCase().startsWith("ko");
-
-    if (isKo) {
-      document.getElementById("content-ko").style.display = "block";
-      document.documentElement.lang = "ko";
-      document.title = "Starly - 지원";
-    } else {
-      document.getElementById("content-en").style.display = "block";
-      document.documentElement.lang = "en";
-      document.title = "Starly - Support";
-    }
-  </script>
 </body>
 </html>
